@@ -407,6 +407,12 @@ JOIN DimDate dt USING (date);
 DROP TABLE tmp_ws;
 ```
 
+<h4>Deactivate your Python venv</h4>
+
+Run the following command to deactivate the Python virtual environment:
+
+	sf-stage-venv\Scripts\deactivate
+
 <h3>Conculsion</h3>
 
 So there you have it, a raw data file added to Snowflake, and data transformed and loaded into tables. If we wanted to automate this process further, we could wrap the SQL that populates the tables into a stored procedure and call it from our Python script. Lets say a new data file is dumped out to a directory every night, the Python script could then be called from a task-scheduling tool after that dump occurs, and voila, a nightly upload of new data. Of course we would want to either distinguish each new data set or exclude data that has already been loaded somehow. There are certainly ways of doing this depending on the needs of the business. 
